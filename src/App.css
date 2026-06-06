@@ -1,0 +1,22 @@
+.app {
+    display: flex; 
+    width: 100%;
+    min-height: 100vh;
+    padding-left: clamp(200px, 16vw, 280px);
+    background-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .mobile-sidebar {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .app {
+        padding-left: 0;
+        padding-bottom: 50px;
+    }
+}

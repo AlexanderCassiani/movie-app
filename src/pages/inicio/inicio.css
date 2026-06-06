@@ -1,0 +1,12 @@
+.inicio {
+    padding: 10px 25px;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .inicio {
+        padding: 8px 15px;
+    }
+}

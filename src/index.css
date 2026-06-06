@@ -1,0 +1,40 @@
+:root {
+  --bg-primary: #0B1120;
+  --bg-secondary: #eaecf0;
+  --bg-card: #1F2937;
+
+  --accent: #E50914;
+  --accent-hover: #FF1F2D;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #292b2e;
+
+  --border: #374151;
+
+  --success: #22C55E;
+  --warning: #F59E0B;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+html.dark-mode body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+html.light-mode body {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+body {
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
