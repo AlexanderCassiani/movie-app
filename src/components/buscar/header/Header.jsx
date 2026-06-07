@@ -8,6 +8,7 @@ export const Header = ({ query, onQueryChange }) => {
                 value={query}
                 onChange={(event) => onQueryChange(event.target.value)}
                 placeholder="Buscar películas, series..."
+                aria-label="Buscar películas o series"
             />
         </header>
     )

@@ -6,6 +6,10 @@
     background-color: transparent;
 }
 
+.app-main {
+    overflow: hidden;
+}
+
 @media (max-width: 767px) {
     .mobile-sidebar {
         display: block;

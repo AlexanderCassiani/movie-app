@@ -11,7 +11,7 @@ export const Sidebar = () => {
     return (
         <div className="sidebar">
             <div>
-                <img src={logo} alt="Logo FlixNova" />
+                <img src={logo} alt="" aria-hidden="true" />
                 <h1>Flix<span>Nova</span></h1>
             </div>
 
@@ -22,7 +22,7 @@ export const Sidebar = () => {
                             className={({ isActive }) => isActive ? 'btn-link link-active' : 'btn-link'}
                             to="/"
                         >
-                            <img src={inicio} alt="Inicio" />
+                            <img src={inicio} alt="" aria-hidden="true" />
                             Inicio
                         </NavLink>
                     </li>
@@ -32,7 +32,7 @@ export const Sidebar = () => {
                             className={({ isActive }) => isActive ? 'btn-link link-active' : 'btn-link'}
                             to="/buscar"
                         >
-                            <img src={buscar} alt="Buscar" />
+                            <img src={buscar} alt="" aria-hidden="true" />
                             Buscar
                         </NavLink>
                     </li>
@@ -42,7 +42,7 @@ export const Sidebar = () => {
                             className={({ isActive }) => isActive ? 'btn-link link-active' : 'btn-link'}
                             to="/peliculas"
                         >
-                            <img src={peliculas} alt="Peliculas" />
+                            <img src={peliculas} alt="" aria-hidden="true" />
                             Peliculas
                         </NavLink>
                     </li>
@@ -52,7 +52,7 @@ export const Sidebar = () => {
                             className={({ isActive }) => isActive ? 'btn-link link-active' : 'btn-link'}
                             to="/series"
                         >
-                            <img src={series} alt="Series" />
+                            <img src={series} alt="" aria-hidden="true" />
                             Series
                         </NavLink>
                     </li>
@@ -62,7 +62,7 @@ export const Sidebar = () => {
                             className={({ isActive }) => isActive ? 'btn-link link-active' : 'btn-link'}
                             to="/favoritos"
                         >
-                            <img src={favoritos} alt="Favoritos" />
+                            <img src={favoritos} alt="" aria-hidden="true" />
                             Favoritos
                         </NavLink>
                     </li>

@@ -10,38 +10,31 @@ export const CarruselPeliculas = ({ title, moviesData, loading }) => {
     const sliderRef = useRef(null)
 
     // Función para realizar un desplazamiento suave al hacer clic en las flechas
-    const smoothScroll = (targetLeft) => {
+    const smoothScroll = (distance) => {
         const slider = sliderRef.current;
-        const startLeft = slider.scrollLeft;
-        const distance = targetLeft - startLeft;
-        const duration = 500;
+
+        const start = slider.scrollLeft;
+        const duration = 400;
         let startTime = null;
 
-        const animation = (currentTime) => {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const animate = (time) => {
+            if (!startTime) startTime = time;
 
-            slider.scrollLeft = startLeft + distance * easeProgress;
+            const progress = Math.min((time - startTime) / duration, 1);
+
+            slider.scrollLeft =
+                start + distance * (1 - Math.pow(1 - progress, 3));
 
             if (progress < 1) {
-                requestAnimationFrame(animation);
+                requestAnimationFrame(animate);
             }
         };
 
-        requestAnimationFrame(animation);
+        requestAnimationFrame(animate);
     };
 
-    const scrollLeft = () => {
-        const slider = sliderRef.current;
-        smoothScroll(slider.scrollLeft - 190);
-    };
-
-    const scrollRight = () => {
-        const slider = sliderRef.current;
-        smoothScroll(slider.scrollLeft + 190);
-    };
+    const scrollLeft = () => smoothScroll(-240);
+    const scrollRight = () => smoothScroll(240);
 
     return (
         <div className="contenedor-pelicula">

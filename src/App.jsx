@@ -9,7 +9,9 @@ function App() {
         <>
             <div className="app">
                 <Sidebar />
-                <RoutesApp />
+                <main className="app-main">
+                    <RoutesApp />
+                </main>
                 <Mobile_sidebar />
             </div>
         </>

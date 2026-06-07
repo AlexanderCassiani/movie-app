@@ -23,7 +23,7 @@ export const Header = () => {
             <h2>Inicio</h2>
 
             <div className='header-mobile-logo'>
-                <img src={logo} alt="Logo FlixNova" />
+                <img src={logo} alt="" aria-hidden="true" />
                 <h1>Flix<span>Nova</span></h1>
             </div>
 

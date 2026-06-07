@@ -47,7 +47,7 @@ export const Buscar = () => {
             <div className="search-status">
                 {loading && <Loader />}
 
-                {!loading && !query.trim() && <p style={{ color: '#666' }}>Escriba el nombre de una película o serie.</p> }
+                {!loading && !query.trim() && <p style={{ color: '#cdcdaf' }}>Escriba el nombre de una película o serie.</p> }
 
                 {!loading && query.trim() && movies.length === 0 && !error && (
                     <p>No se encontraron resultados para «{query}».</p>
