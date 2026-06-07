@@ -3,6 +3,7 @@
     box-sizing: border-box;
     min-width: 0;
     overflow: hidden;
+    flex-grow: 1;
 }
 
 .search-status {

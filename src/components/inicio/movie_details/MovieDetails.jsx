@@ -1,10 +1,12 @@
-import './movieDetails.css';
-import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { getMovieDetails } from "../../../api/tmdb";
-import { Loader } from "../../loader/loader";
-import { getVideoTrailer } from "../../../api/tmdb";
-import { MovieTrailer } from "./MovieTrailer";
+import './movieDetails.css' 
+import { useParams, Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { getMovieDetails } from "../../../api/tmdb"
+import { Loader } from "../../loader/loader"
+import { getVideoTrailer } from "../../../api/tmdb"
+import { MovieTrailer } from "./MovieTrailer"
+import { getRecomendedMovies } from "../../../api/tmdb"
+import { CarruselPeliculas } from "../../../components/inicio/grid_results/CarruselPeliculas"
 
 export const MovieDetails = () => {
     const { id } = useParams()
@@ -13,16 +15,23 @@ export const MovieDetails = () => {
     const [error, setError] = useState(null)
     const [trailerKey, setTrailerKey] = useState(null)
     const [showTrailer, setShowTrailer] = useState(false)
+    const [recomendedMovies, setRecomendedMovies] = useState([])
 
     useEffect(() => {
         const fetchMovie = async () => {
             try {
                 setLoading(true)
                 setError(null)
+                // Obtener detalles de la película
                 const data = await getMovieDetails(id)
                 setMovie(data);
+                // Obtener trailer
                 const trailerData = await getVideoTrailer(id)
+                // Buscar el trailer oficial en YouTube
                 setTrailerKey(trailerData.results.find(video => video.type === 'Trailer' && video.site === 'YouTube')?.key || null)
+                // Obtener películas recomendadas
+                const recomendedData = await getRecomendedMovies(id)
+                setRecomendedMovies(recomendedData.results || [])
             } catch (err) {
                 console.error('Error fetching movie:', err)
                 setError(err.message || 'Error al cargar la película')
@@ -107,6 +116,14 @@ export const MovieDetails = () => {
                     )}
                 </div>
             </div>
+
+            {recomendedMovies.length > 0 && (
+                <CarruselPeliculas
+                    title="Películas que tal vez te gusten"
+                    moviesData={recomendedMovies}
+                    loading={loading}
+                />
+            )}
         </div>
     )
 }

@@ -1,6 +1,7 @@
 .contenedor-pelicula {
   position: relative;
   min-height: 300px;
+  padding: 5px 8px
 }
 
 .btn-left,
@@ -65,8 +66,8 @@ html.dark-mode .card-pelicula h3 {
 }
 
 .poster-pelicula {
-  width: 160px;
-  height: 240px;
+  width: 155px;
+  height: 235px;
   border-radius: 5px;
   object-fit: cover;
   transition: transform 0.3s ease;

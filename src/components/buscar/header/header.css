@@ -3,20 +3,24 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    width: 100%;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 header input {
     width: 35vw;
-    max-width: 760px;
     padding: 10px 12px;
     outline: none;
     border-radius: 50px;
     background-color: var(--bg-primary);
     color: white;
     border: 1px solid var(--border);
+}
+
+@media (max-width: 767px) {
+    header input {
+        flex-grow: 1;
+    }
 }
 
 html.light-mode header input {
