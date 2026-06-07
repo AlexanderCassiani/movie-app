@@ -10,7 +10,7 @@
 }
 
 .video-container {
-    width: min(800px, 100%);
+    width: min(900px, 100%);
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 18px;

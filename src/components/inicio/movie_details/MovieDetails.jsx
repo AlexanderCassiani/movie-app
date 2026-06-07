@@ -36,10 +36,6 @@ export const MovieDetails = () => {
         }
     }, [id])
 
-    useEffect(() => {
-        console.log('Trailer key cambió:', trailerKey)
-    }, [trailerKey])
-
     if (loading) return <Loader />;
 
     if (error) return (

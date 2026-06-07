@@ -25,6 +25,23 @@ export const getPopularMovies = async () => {
     return data;
 };
 
+export const getRecentReleases = async () => {
+    const response = await fetch(`${BASE_URL}/movie/now_playing?api_key=${API_KEY}`);
+    const data = await response.json();
+    return data;
+};
+
+export const getUpcomingMovies = async () => {
+    const response = await fetch(`${BASE_URL}/movie/upcoming?api_key=${API_KEY}`);
+    const data = await response.json();
+    return data;
+};
+
+export const getMoviesByGenre = async (genreId) => {
+    const response = await fetch(`${BASE_URL}/discover/movie?with_genres=${genreId}&api_key=${API_KEY}`);
+    const data = await response.json();
+    return data;
+};
 export const getMovieDetails = async (movieId) => {
     const response = await fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`);
     const data = await response.json();

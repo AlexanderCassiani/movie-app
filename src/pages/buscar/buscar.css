@@ -1,8 +1,8 @@
 .buscar {
-    padding: 8px 16px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .search-status {

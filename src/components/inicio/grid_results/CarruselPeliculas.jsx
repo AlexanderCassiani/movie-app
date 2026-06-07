@@ -9,6 +9,7 @@ export const CarruselPeliculas = ({ title, moviesData, loading }) => {
 
     const sliderRef = useRef(null)
 
+    // Función para realizar un desplazamiento suave al hacer clic en las flechas
     const smoothScroll = (targetLeft) => {
         const slider = sliderRef.current;
         const startLeft = slider.scrollLeft;

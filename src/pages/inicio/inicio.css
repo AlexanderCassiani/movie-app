@@ -10,3 +10,10 @@
         padding: 8px 15px;
     }
 }
+
+.inicio .search-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
