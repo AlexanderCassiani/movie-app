@@ -1,6 +1,6 @@
 import "./header.css"
-import lightMode from "../../../assets/icons/lightMode.png"
-import darkMode from "../../../assets/icons/darkMode.png"
+import lightMode from "../../../assets/icons/lightMode.svg"
+import darkMode from "../../../assets/icons/darkMode.svg"
 import { useState, useEffect } from "react"
 
 export const Header = () => {

@@ -1,7 +1,7 @@
 import './carrusel.css'
 import { useRef } from "react";
-import arrowLeft from '../../../assets/icons/arrowLeft.png'
-import arrowRight from '../../../assets/icons/arrowRight.png'
+import arrowLeft from '../../../assets/icons/arrowLeft.svg'
+import arrowRight from '../../../assets/icons/arrowRight.svg'
 import { Loader } from "../../loader/loader"
 import { Link } from 'react-router-dom';
 

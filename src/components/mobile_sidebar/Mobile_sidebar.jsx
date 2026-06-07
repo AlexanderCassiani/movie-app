@@ -1,10 +1,10 @@
 import './mobile_sidebar.css'
-import logo from '../../assets/icons/sidebar/logo.png'
-import inicio from '../../assets/icons/sidebar/inicio.png'
-import buscar from '../../assets/icons/sidebar/buscar.png'
-import peliculas from '../../assets/icons/sidebar/peliculas.png'
-import series from '../../assets/icons/sidebar/series.png'
-import favoritos from '../../assets/icons/sidebar/favoritos.png'
+import logo from '../../assets/icons/sidebar/logo.svg'
+import inicio from '../../assets/icons/sidebar/inicio.svg'
+import buscar from '../../assets/icons/sidebar/buscar.svg'
+import peliculas from '../../assets/icons/sidebar/peliculas.svg'
+import series from '../../assets/icons/sidebar/series.svg'
+import favoritos from '../../assets/icons/sidebar/favoritos.svg'
 import { NavLink } from 'react-router-dom'
 
 export const Mobile_sidebar = () => {

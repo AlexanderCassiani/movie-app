@@ -4,20 +4,11 @@ header {
     align-items: center;
     width: 100%;
     min-height: 60px;
+    padding-right: 20px;
 }
 
 header h2 {
     font-size: 2rem;
-}
-
-.search-input {
-    background-color: var(--bg-secondary);
-    padding: 15px 25px;
-    border-radius: 100px;
-    border: none;
-    outline: none;
-    width: 40vw;
-    color: var(--text-primary);
 }
 
 .search-input:focus {
