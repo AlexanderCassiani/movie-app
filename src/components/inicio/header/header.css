@@ -45,3 +45,16 @@ header h2 {
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.header-mobile-logo {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+@media (max-width: 767px) {
+    .header-mobile-logo {
+        display: flex;
+    }
+}

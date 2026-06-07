@@ -42,9 +42,9 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: transform 0.3s ease;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 a {
@@ -64,15 +64,16 @@ html.dark-mode .card-pelicula h3 {
   color: white;
 }
 
-.card-pelicula:hover {
-  transform: scale(1.05);
-}
-
 .poster-pelicula {
   width: 160px;
   height: 240px;
   border-radius: 5px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-pelicula:hover .poster-pelicula {
+  transform: scale(1.08);
 }
 
 .flex-contenedor {

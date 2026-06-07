@@ -36,3 +36,9 @@ export const getMovieDetails = async (movieId) => {
 
     return data;
 };
+
+export const getVideoTrailer = async (movieId) => {
+    const response = await fetch(`${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}`);
+    const data = await response.json();
+    return data;
+};

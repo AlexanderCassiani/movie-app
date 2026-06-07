@@ -3,35 +3,42 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovieDetails } from "../../../api/tmdb";
 import { Loader } from "../../loader/loader";
+import { getVideoTrailer } from "../../../api/tmdb";
+import { MovieTrailer } from "./MovieTrailer";
 
 export const MovieDetails = () => {
-    const { id } = useParams();
-    const [movie, setMovie] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const { id } = useParams()
+    const [movie, setMovie] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+    const [trailerKey, setTrailerKey] = useState(null)
+    const [showTrailer, setShowTrailer] = useState(false)
 
     useEffect(() => {
         const fetchMovie = async () => {
             try {
-                setLoading(true);
-                setError(null);
-                const data = await getMovieDetails(id);
+                setLoading(true)
+                setError(null)
+                const data = await getMovieDetails(id)
                 setMovie(data);
+                const trailerData = await getVideoTrailer(id)
+                setTrailerKey(trailerData.results.find(video => video.type === 'Trailer' && video.site === 'YouTube')?.key || null)
             } catch (err) {
-                console.error('Error fetching movie:', err);
-                setError(err.message || 'Error al cargar la película');
-                setMovie(null);
+                console.error('Error fetching movie:', err)
+                setError(err.message || 'Error al cargar la película')
+                setMovie(null)
             } finally {
-                setLoading(false);
+                setLoading(false)
             }
         };
-
-        if (id) fetchMovie();
-        else {
-            setError('ID inválido');
-            setLoading(false);
+        if (id) {
+            fetchMovie()
         }
-    }, [id]);
+    }, [id])
+
+    useEffect(() => {
+        console.log('Trailer key cambió:', trailerKey)
+    }, [trailerKey])
 
     if (loading) return <Loader />;
 
@@ -49,7 +56,7 @@ export const MovieDetails = () => {
 
     return (
         <div className="movie-details-container">
-            <div 
+            <div
                 className="movie-backdrop"
                 style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})` }}
             >
@@ -58,7 +65,7 @@ export const MovieDetails = () => {
 
             <div className="movie-content">
                 <div className="movie-poster">
-                    <img 
+                    <img
                         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                         alt={movie.title}
                     />
@@ -66,12 +73,19 @@ export const MovieDetails = () => {
 
                 <div className="movie-info">
                     <h1>{movie.title}</h1>
-                    
+
                     <div className="movie-meta">
                         <span className="rating">⭐ {movie.vote_average?.toFixed(1)}</span>
                         <span className="release-date">{movie.release_date ? new Date(movie.release_date).getFullYear() : '—'}</span>
                         <span className="runtime">{movie.runtime ? `${movie.runtime} min` : '—'}</span>
+                        <span
+                            className="trailer-link"
+                            onClick={() => setShowTrailer(true)}
+                        >Ver trailer
+                        </span>
                     </div>
+
+                    {showTrailer && <MovieTrailer videoKey={trailerKey} setShowTrailer={setShowTrailer} />}
 
                     <div className="genres">
                         {movie.genres?.map(genre => (

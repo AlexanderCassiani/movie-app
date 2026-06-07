@@ -28,7 +28,7 @@
 
 .card-pelicula {
   cursor: pointer;
-  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .card-pelicula h3 {
@@ -36,15 +36,16 @@
     margin: 8px 12px 12px;
 }
 
-.card-pelicula:hover {
-    transform: scale(1.05);
-}
-
 .poster-pelicula {
     width: 160px;
     height: 240px;
     border-radius: 5px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-pelicula:hover .poster-pelicula {
+    transform: scale(1.08);
 }
 
 .poster-placeholder {

@@ -11,8 +11,8 @@ export const Sidebar = () => {
     return (
         <div className="sidebar">
             <div>
-                <img src={logo} alt="Logo CineFlix" />
-                <h1>Cine<span>Flix</span></h1>
+                <img src={logo} alt="Logo FlixNova" />
+                <h1>Flix<span>Nova</span></h1>
             </div>
 
             <nav className="sidebar-nav">

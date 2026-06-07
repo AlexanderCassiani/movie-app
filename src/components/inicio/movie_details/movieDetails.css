@@ -68,7 +68,13 @@
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    align-items: center;
     font-size: 1.1rem;
+}
+
+.trailer-link {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .rating {
