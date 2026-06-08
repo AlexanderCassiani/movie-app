@@ -1,6 +1,9 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
+const isMobile = window.innerWidth <= 767;
+export const size = isMobile ? 'w342' : 'w780';
+
 export const fetchMovie = async (query) => {
     const response = await fetch(`${BASE_URL}/search/movie?query=${query}&api_key=${API_KEY}`);
     const data = await response.json();

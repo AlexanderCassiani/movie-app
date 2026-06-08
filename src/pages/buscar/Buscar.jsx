@@ -5,6 +5,7 @@ import { fetchMovie } from '../../api/tmdb'
 import noImage from '../../assets/images/no_image.png'
 import { Loader } from '../../components/loader/loader'
 import { Link } from 'react-router-dom'
+import { size } from '../../api/tmdb'
 
 const Buscar = () => {
     const [query, setQuery] = useState('')
@@ -68,7 +69,7 @@ const Buscar = () => {
                             >
                                 <img
                                     className="poster-pelicula"
-                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : noImage}
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/${size}${movie.poster_path}` : noImage}
                                     alt={movie.title || 'Imagen no disponible'}
                                     loading="lazy"
                                 />

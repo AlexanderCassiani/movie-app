@@ -7,6 +7,7 @@ import { getVideoTrailer } from "../../../api/tmdb"
 import { MovieTrailer } from "./MovieTrailer"
 import { getRecomendedMovies } from "../../../api/tmdb"
 import { CarruselPeliculas } from "../../../components/inicio/grid_results/CarruselPeliculas"
+import { size } from '../../../api/tmdb'
 
 const MovieDetails = () => {
     const { id } = useParams()
@@ -71,7 +72,7 @@ const MovieDetails = () => {
             <div className="movie-content">
                 <div className="movie-poster">
                     <img
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                        src={`https://image.tmdb.org/t/p/${size}${movie.poster_path}`}
                         alt={`Póster de ${movie.title}`}
                     />
                 </div>
