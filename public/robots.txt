@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flix-nova.vercel.app/sitemap.xml

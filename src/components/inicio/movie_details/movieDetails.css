@@ -3,6 +3,7 @@
     min-height: 100vh;
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    padding: 0 5px;
 }
 
 @media (max-width: 768px) {
