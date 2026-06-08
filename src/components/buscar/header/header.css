@@ -25,7 +25,6 @@ header input {
 
 html.light-mode header input {
     background-color: var(--bg-secondary);
-    color: var(--text);
 }
 
 header input:focus {

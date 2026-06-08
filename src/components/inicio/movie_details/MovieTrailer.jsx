@@ -3,8 +3,10 @@ import './movieTrailer.css';
 export const MovieTrailer = ({ videoKey, setShowTrailer }) => {
     if (!videoKey) {
         return (
-            <div className="video-not-found">
-                No hay tráiler disponible
+            <div className="trailer-overlay" onClick={() => setShowTrailer(false)}>
+                <div className="video-not-found">
+                    No hay tráiler disponible
+                </div>
             </div>
         );
     }

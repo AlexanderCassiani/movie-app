@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.peliculas-genres {
+    margin-bottom: 100px;
+}
+
 .peliculas header {
     display: flex;
     justify-content: space-between;

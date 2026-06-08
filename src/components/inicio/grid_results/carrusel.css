@@ -1,7 +1,13 @@
 .contenedor-pelicula {
   position: relative;
   min-height: 300px;
-  paddding-bottom: 15px;
+  padding: 15px 15px;
+}
+
+@media (max-width: 768px) {
+  .contenedor-pelicula {
+    padding: 0 5px;
+  }
 }
 
 .btn-left,
@@ -50,19 +56,13 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .card-pelicula h3 {
   font-size: 0.9rem;
   text-decoration: none;
-}
-
-html.light-mode .card-pelicula h3 {
-  color: black;
-}
-
-html.dark-mode .card-pelicula h3 {
-  color: white;
+  color: inherit;
 }
 
 .poster-pelicula {

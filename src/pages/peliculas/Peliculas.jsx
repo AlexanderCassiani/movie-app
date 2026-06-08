@@ -70,7 +70,8 @@ const Peliculas = () => {
                 <h2>Películas por género</h2>
             </header>
 
-            {genres.map((genre) => (
+            <div className="peliculas-genres">
+                {genres.map((genre) => (
                 <CarruselPeliculas
                     key={genre.id}
                     title={genre.name}
@@ -78,6 +79,7 @@ const Peliculas = () => {
                     loading={genre.loading}
                 />
             ))}
+            </div>
         </div>
     )
 }

@@ -5,6 +5,12 @@
     color: var(--text-primary);
 }
 
+@media (max-width: 768px) {
+    .movie-details-container {
+        padding-bottom: 70px;
+    }
+}
+
 .movie-backdrop {
     position: relative;
     width: 100%;
@@ -58,7 +64,7 @@
     gap: 1.5rem;
 }
 
-.movie-info h1 {
+.movie-info h2 {
     font-size: 3rem;
     margin: 0;
     color: white;
@@ -112,7 +118,6 @@
 .overview h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: white;
 }
 
 .overview p {
@@ -158,7 +163,7 @@
         height: 225px;
     }
 
-    .movie-info h1 {
+    .movie-info h2 {
         font-size: 2rem;
     }
 
@@ -182,7 +187,7 @@
         height: 180px;
     }
 
-    .movie-info h1 {
+    .movie-info h2 {
         font-size: 1.5rem;
     }
 
