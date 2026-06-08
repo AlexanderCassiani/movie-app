@@ -1,7 +1,7 @@
 .contenedor-pelicula {
   position: relative;
   min-height: 300px;
-  padding: 5px 8px
+  padding: 0 8px
 }
 
 .btn-left,
