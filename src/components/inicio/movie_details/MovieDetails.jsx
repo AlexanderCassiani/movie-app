@@ -1,4 +1,4 @@
-import './movieDetails.css' 
+import './movieDetails.css'
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getMovieDetails } from "../../../api/tmdb"
@@ -8,6 +8,8 @@ import { MovieTrailer } from "./MovieTrailer"
 import { getRecomendedMovies } from "../../../api/tmdb"
 import { CarruselPeliculas } from "../../../components/inicio/grid_results/CarruselPeliculas"
 import { size } from '../../../api/tmdb'
+import favoritos from '../../../assets/icons/favoritos.svg'
+import agregadoFavoritos from '../../../assets/icons/agregadoFavoritos.svg'
 
 const MovieDetails = () => {
     const { id } = useParams()
@@ -17,19 +19,29 @@ const MovieDetails = () => {
     const [trailerKey, setTrailerKey] = useState(null)
     const [showTrailer, setShowTrailer] = useState(false)
     const [recomendedMovies, setRecomendedMovies] = useState([])
+    const [isFavorite, setIsFavorite] = useState(() => {
+        return localStorage.getItem(`favorito_${id}`) !== null;
+    });
+
+    useEffect(() => {
+        setIsFavorite(localStorage.getItem(`favorito_${id}`) !== null)
+    }, [id])
 
     useEffect(() => {
         const fetchMovie = async () => {
             try {
                 setLoading(true)
                 setError(null)
+
                 // Obtener detalles de la película
                 const data = await getMovieDetails(id)
                 setMovie(data);
+
                 // Obtener trailer
                 const trailerData = await getVideoTrailer(id)
                 // Buscar el trailer oficial en YouTube
                 setTrailerKey(trailerData.results.find(video => video.type === 'Trailer' && video.site === 'YouTube')?.key || null)
+
                 // Obtener películas recomendadas
                 const recomendedData = await getRecomendedMovies(id)
                 setRecomendedMovies(recomendedData.results || [])
@@ -45,6 +57,25 @@ const MovieDetails = () => {
             fetchMovie()
         }
     }, [id])
+
+    const toggleFavorite = () => {
+        if (!movie) return;
+
+        if (isFavorite) {
+            localStorage.removeItem(`favorito_${id}`)
+            setIsFavorite(false)
+        } else {
+            localStorage.setItem(
+                `favorito_${id}`,
+                JSON.stringify({
+                    id: movie.id,
+                    title: movie.title,
+                    poster_path: movie.poster_path
+                })
+            )
+            setIsFavorite(true)
+        }
+    }
 
     if (loading) return <Loader />;
 
@@ -88,6 +119,14 @@ const MovieDetails = () => {
                             className="trailer-link"
                             onClick={() => setShowTrailer(true)}
                         >Ver trailer
+                        </span>
+                        <span title={isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}>
+                            <img
+                                src={isFavorite ? agregadoFavoritos : favoritos}
+                                alt={isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+                                className="favorite-icon"
+                                onClick={toggleFavorite}
+                            />
                         </span>
                     </div>
 

@@ -40,7 +40,6 @@ export const CarruselPeliculas = ({ title, moviesData, loading }) => {
 
     return (
         <div className="contenedor-pelicula">
-
             {loading ? <Loader /> : (
                 <>
                     <button
@@ -80,7 +79,6 @@ export const CarruselPeliculas = ({ title, moviesData, loading }) => {
                     </button>
                 </>
             )}
-
         </div>
     )
 }

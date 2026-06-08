@@ -52,7 +52,7 @@ const Buscar = () => {
                 {!loading && !query.trim() && <p style={{ color: '#b5b5ae' }}>Escriba el nombre de una película o serie.</p> }
 
                 {!loading && query.trim() && movies.length === 0 && !error && (
-                    <p>No se encontraron resultados para «{query}».</p>
+                    <p style={{ color: 'rgb(181, 181, 174)' }}>No se encontraron resultados para «{query}».</p>
                 )}
 
                 {!loading && error && <p className="search-error">{error}</p>}

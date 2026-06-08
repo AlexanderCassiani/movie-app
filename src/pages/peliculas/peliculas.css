@@ -9,6 +9,12 @@
     margin-bottom: 100px;
 }
 
+@media (max-width: 767px) {
+    .peliculas {
+        padding: 10px 8px;
+    }
+}
+
 .peliculas header {
     display: flex;
     justify-content: space-between;

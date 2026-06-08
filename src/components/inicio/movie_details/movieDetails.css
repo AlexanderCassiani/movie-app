@@ -98,6 +98,15 @@
     color: var(--text-primary);
 }
 
+.favorite-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.2);
+}
+
 .genres {
     display: flex;
     gap: 0.5rem;

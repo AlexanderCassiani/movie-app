@@ -1,0 +1,16 @@
+.favoritos {
+    padding: 10px 25px;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.favoritos h2 {
+    font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+    .favoritos {
+        padding: 10px 8px;
+    }
+}
