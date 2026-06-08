@@ -75,7 +75,7 @@ const Peliculas = () => {
                 <CarruselPeliculas
                     key={genre.id}
                     title={genre.name}
-                    moviesData={genre.movies}
+                    moviesData={genre.movies.slice(0, 12)}
                     loading={genre.loading}
                 />
             ))}

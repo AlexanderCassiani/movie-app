@@ -53,31 +53,31 @@ const Inicio = () => {
 
             <CarruselPeliculas
                 title="Películas mejor valoradas"
-                moviesData={topRatedMovies}
+                moviesData={topRatedMovies.slice(0, 12)}
                 loading={loadingTopRated}
             />
 
             <CarruselPeliculas
                 title="Películas populares"
-                moviesData={popularMovies}
+                moviesData={popularMovies.slice(0, 12)}
                 loading={loadingPopular}
             />
 
             <CarruselPeliculas
                 title="Tendencias ahora"
-                moviesData={trendingMovies}
+                moviesData={trendingMovies.slice(0, 12)}
                 loading={loadingTrending}
             />
 
             <CarruselPeliculas
                 title="Lanzamientos recientes"
-                moviesData={recentReleases}
+                moviesData={recentReleases.slice(0, 12)}
                 loading={loadingRecent}
             />
 
             <CarruselPeliculas
                 title="Próximos estrenos"
-                moviesData={upcomingMovies}
+                moviesData={upcomingMovies.slice(0, 12)}
                 loading={loadingUpcoming}
             />
 

@@ -60,7 +60,7 @@ const Buscar = () => {
 
             {!loading && movies.length > 0 && (
                 <div className="search-results-grid">
-                    {movies.map(movie => (
+                    {movies.slice(0, 12).map(movie => (
                         <Link to={`/movie/${movie.id}`}
                             key={movie.id}
                         >
