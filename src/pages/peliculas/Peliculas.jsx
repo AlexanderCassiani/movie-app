@@ -25,7 +25,7 @@ const GENEROS = [
     { name: 'Western', id: 37 }
 ]
 
-export const Peliculas = () => {
+const Peliculas = () => {
     const [genres, setGenres] = useState(
         GENEROS.map((genre) => ({
             ...genre,
@@ -81,3 +81,5 @@ export const Peliculas = () => {
         </div>
     )
 }
+
+export default Peliculas

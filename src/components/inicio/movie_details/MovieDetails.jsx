@@ -8,7 +8,7 @@ import { MovieTrailer } from "./MovieTrailer"
 import { getRecomendedMovies } from "../../../api/tmdb"
 import { CarruselPeliculas } from "../../../components/inicio/grid_results/CarruselPeliculas"
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const { id } = useParams()
     const [movie, setMovie] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -127,3 +127,5 @@ export const MovieDetails = () => {
         </div>
     )
 }
+
+export default MovieDetails

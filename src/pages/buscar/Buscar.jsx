@@ -2,10 +2,11 @@ import './buscar.css'
 import { useEffect, useState } from 'react'
 import { Header } from '../../components/buscar/header/Header'
 import { fetchMovie } from '../../api/tmdb'
+import noImage from '../../assets/images/no_image.png'
 import { Loader } from '../../components/loader/loader'
 import { Link } from 'react-router-dom'
 
-export const Buscar = () => {
+const Buscar = () => {
     const [query, setQuery] = useState('')
     const [movies, setMovies] = useState([])
     const [loading, setLoading] = useState(false)
@@ -67,8 +68,8 @@ export const Buscar = () => {
                             >
                                 <img
                                     className="poster-pelicula"
-                                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                    alt={movie.title}
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : noImage}
+                                    alt={movie.title || 'Imagen no disponible'}
                                     loading="lazy"
                                 />
 
@@ -81,3 +82,5 @@ export const Buscar = () => {
         </div>
     )
 }
+
+export default Buscar

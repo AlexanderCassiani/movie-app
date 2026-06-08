@@ -4,7 +4,7 @@ import { CarruselPeliculas } from "../../components/inicio/grid_results/Carrusel
 import { getPopularMovies, getTrendingMovies, getTopRatedMovies, getRecentReleases, getUpcomingMovies } from "../../api/tmdb"
 import { useEffect, useState } from "react"
 
-export const Inicio = () => {
+const Inicio = () => {
 
     const [popularMovies, setPopularMovies] = useState([])
     const [trendingMovies, setTrendingMovies] = useState([])
@@ -85,3 +85,5 @@ export const Inicio = () => {
         </div>
     )
 }
+
+export default Inicio

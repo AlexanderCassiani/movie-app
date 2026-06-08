@@ -2,6 +2,7 @@ import './carrusel.css'
 import { useRef } from "react";
 import arrowLeft from '../../../assets/icons/arrowLeft.svg'
 import arrowRight from '../../../assets/icons/arrowRight.svg'
+import noImage from '../../../assets/images/no_image.png'
 import { Loader } from "../../loader/loader"
 import { Link } from 'react-router-dom';
 
@@ -60,8 +61,8 @@ export const CarruselPeliculas = ({ title, moviesData, loading }) => {
                                 >
                                     <img
                                         className="poster-pelicula"
-                                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                        alt={movie.title}
+                                        src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : noImage}
+                                        alt={movie.title || 'Imagen no disponible'}
                                         loading="lazy"
                                     />
 
