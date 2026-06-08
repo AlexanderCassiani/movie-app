@@ -1,5 +1,5 @@
 import './favoritos.css'
-import '../buscar/buscar'
+import '../buscar/buscar.css'
 import { useState, useEffect } from 'react'
 import { size } from '../../api/tmdb'
 import { Link } from 'react-router-dom'
