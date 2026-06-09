@@ -7,6 +7,7 @@ import { getVideoTrailer } from "../../../api/tmdb"
 import { MovieTrailer } from "./MovieTrailer"
 import { getRecomendedMovies } from "../../../api/tmdb"
 import { CarruselPeliculas } from "../../../components/inicio/grid_results/CarruselPeliculas"
+import no_image from '../../../assets/images/no_image.png'
 import { size } from '../../../api/tmdb'
 import favoritos from '../../../assets/icons/favoritos.svg'
 import agregadoFavoritos from '../../../assets/icons/agregadoFavoritos.svg'
@@ -103,7 +104,7 @@ const MovieDetails = () => {
             <div className="movie-content">
                 <div className="movie-poster">
                     <img
-                        src={`https://image.tmdb.org/t/p/${size}${movie.poster_path}`}
+                        src={movie.poster_path ? `https://image.tmdb.org/t/p/${size}${movie.poster_path} ` : no_image}
                         alt={`Póster de ${movie.title}`}
                     />
                 </div>

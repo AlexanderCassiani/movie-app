@@ -1,6 +1,7 @@
 import './favoritos.css'
 import '../buscar/buscar.css'
 import { useState, useEffect } from 'react'
+import no_image from '../../assets/images/no_image.png'
 import { size } from '../../api/tmdb'
 import { Link } from 'react-router-dom'
 
@@ -34,7 +35,7 @@ const Favoritos = () => {
                             <div className="card-pelicula">
                                 <img
                                     className="poster-pelicula"
-                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/${size}${movie.poster_path}` : noImage}
+                                    src={movie?.poster_path ? `https://image.tmdb.org/t/p/${size}${movie.poster_path}` : no_image}
                                     alt={movie.title || 'Imagen no disponible'}
                                     loading="lazy"
                                 />

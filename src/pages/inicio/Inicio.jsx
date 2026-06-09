@@ -17,7 +17,7 @@ const Inicio = () => {
     const [loadingTopRated, setLoadingTopRated] = useState(true)
     const [loadingRecent, setLoadingRecent] = useState(true)
     const [loadingUpcoming, setLoadingUpcoming] = useState(true)
-    
+
 
     useEffect(() => {
         const loadAllMovies = async () => {
@@ -81,7 +81,12 @@ const Inicio = () => {
                 loading={loadingUpcoming}
             />
 
-            <p className="search-info">Puedes buscar más películas en el apartado de buscar.</p>
+            <p className="search-info">Creado por <a
+                    style={{ textDecoration: 'underline' }}
+                    target='_blank'
+                    href="https://github.com/AlexanderCassiani/">
+                     Alexander cassiani</a>
+            </p>
         </div>
     )
 }
