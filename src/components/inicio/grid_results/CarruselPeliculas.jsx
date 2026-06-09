@@ -62,11 +62,11 @@ export const CarruselPeliculas = ({ title, moviesData, loading }) => {
                                     <img
                                         className="poster-pelicula"
                                         src={movie.poster_path ? `https://image.tmdb.org/t/p/${size}${movie.poster_path}` : noImage}
-                                        alt={movie.title || 'Imagen no disponible'}
+                                        alt={movie.title || movie.name || 'Imagen no disponible'}
                                         loading="lazy"
                                     />
 
-                                    <h3>{movie.title}</h3>
+                                    <h3>{movie.title || movie.name}</h3>
                                 </div>
                             </Link>
                         ))}

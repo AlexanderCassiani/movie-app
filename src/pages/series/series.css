@@ -5,12 +5,18 @@
     overflow: hidden;
 }
 
-.series h2 {
+.series h2:first-child {
     font-size: 2rem;
 }
 
 @media (max-width: 480px) {
     .series {
         padding: 8px 15px;
+    }
+}
+
+@media (min-width: 787px) {
+    .series div {
+        padding: 0;
     }
 }

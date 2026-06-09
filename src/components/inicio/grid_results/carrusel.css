@@ -13,8 +13,7 @@
 .btn-left,
 .btn-right {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
   z-index: 5;
   border: none;
   padding: 1rem;
