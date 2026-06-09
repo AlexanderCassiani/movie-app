@@ -13,7 +13,6 @@ header input {
     outline: none;
     border-radius: 50px;
     background-color: var(--bg-primary);
-    color: white;
     border: 1px solid var(--border);
 }
 
@@ -25,6 +24,7 @@ header input {
 
 html.light-mode header input {
     background-color: var(--bg-secondary);
+    color: black;
 }
 
 header input:focus {
