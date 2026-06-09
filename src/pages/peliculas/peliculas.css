@@ -9,17 +9,13 @@
     margin-bottom: 100px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
     .peliculas {
         padding: 10px 8px;
     }
 }
 
 .peliculas header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     min-height: 60px;
     padding-right: 20px;
 }
